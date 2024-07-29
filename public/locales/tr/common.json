@@ -1,0 +1,13 @@
+{
+    "title": "Zaman Takipçisi",
+    "name": "İsim Soyisim",
+    "project": "Proje",
+    "item_number": "Madde Numarası",
+    "task_description": "Görev Açıklaması",
+    "start_task": "Göreve Başla",
+    "end_task": "Görevi Bitir",
+    "export_to_excel": "Excel'e Aktar",
+    "tasks": "Görevler",
+    "time_tracker": "Zaman Takipçisi"
+  }
+  

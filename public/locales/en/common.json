@@ -1,0 +1,13 @@
+{
+    "title": "Time Tracker",
+    "name": "Name Surname",
+    "project": "Project",
+    "item_number": "Item Number",
+    "task_description": "Task Description",
+    "start_task": "Start Task",
+    "end_task": "End Task",
+    "export_to_excel": "Export to Excel",
+    "tasks": "Tasks",
+    "time_tracker": "Time Tracker"
+  }
+  
