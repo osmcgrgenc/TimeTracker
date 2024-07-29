@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import moment from 'moment';
 import * as XLSX from 'xlsx';
 import styles from '../styles/Home.module.css';
@@ -13,6 +13,19 @@ export default function Home() {
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
   const [tasks, setTasks] = useState([]);
+  const [projectList, setProjectList] = useState([]);
+  const [itemNumberList, setItemNumberList] = useState([]);
+
+  useEffect(() => {
+    const storedName = localStorage.getItem('name');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('name', name);
+  }, [name]);
 
   const handleStart = () => {
     setStartTime(moment());
@@ -25,6 +38,12 @@ export default function Home() {
     const hours = duration.asHours();
     const newTask = { project, itemNumber, taskDescription, startTime: startTime.format('HH:mm'), endTime: end.format('HH:mm'), hours };
     setTasks([...tasks, newTask]);
+    if (!projectList.includes(project)) {
+      setProjectList([...projectList, project]);
+    }
+    if (!itemNumberList.includes(itemNumber)) {
+      setItemNumberList([...itemNumberList, itemNumber]);
+    }
     setProject('');
     setItemNumber('');
     setTaskDescription('');
@@ -51,13 +70,31 @@ export default function Home() {
       <div className={styles.formGroup}>
         <label>
           Project:
-          <input type="text" value={project} onChange={(e) => setProject(e.target.value)} />
+          <input
+            list="projects"
+            value={project}
+            onChange={(e) => setProject(e.target.value)}
+          />
+          <datalist id="projects">
+            {projectList.map((proj, index) => (
+              <option key={index} value={proj} />
+            ))}
+          </datalist>
         </label>
       </div>
       <div className={styles.formGroup}>
         <label>
           Item Number:
-          <input type="text" value={itemNumber} onChange={(e) => setItemNumber(e.target.value)} />
+          <input
+            list="itemNumbers"
+            value={itemNumber}
+            onChange={(e) => setItemNumber(e.target.value)}
+          />
+          <datalist id="itemNumbers">
+            {itemNumberList.map((item, index) => (
+              <option key={index} value={item} />
+            ))}
+          </datalist>
         </label>
       </div>
       <div className={styles.formGroup}>
@@ -78,7 +115,9 @@ export default function Home() {
         <ul>
           {tasks.map((task, index) => (
             <li key={index}>
-              {task.project} - {task.itemNumber} - {task.taskDescription} - {task.startTime} - {task.endTime} - {task.hours.toFixed(2)} hours
+              <div className={styles.taskItem}>
+                <span>{task.project}</span> - <span>{task.itemNumber}</span> - <span>{task.taskDescription}</span> - <span>{task.startTime}</span> - <span>{task.endTime}</span> - <span>{task.hours.toFixed(2)} hours</span>
+              </div>
             </li>
           ))}
         </ul>
