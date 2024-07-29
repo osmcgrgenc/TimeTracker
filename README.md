@@ -1,4 +1,3 @@
-```markdown
 # Employee Time Tracker
 
 Bu proje, çalışanların günlük aktivitelerini kaydetmelerini ve gün sonunda bu aktiviteleri Excel formatında raporlamalarını sağlayan bir uygulamadır. Uygulama modern bir tasarıma sahiptir ve responsive (duyarlı) bir şekilde çalışmaktadır.
