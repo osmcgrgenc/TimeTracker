@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+```markdown
+# Employee Time Tracker
 
-## Getting Started
+Bu proje, çalışanların günlük aktivitelerini kaydetmelerini ve gün sonunda bu aktiviteleri Excel formatında raporlamalarını sağlayan bir uygulamadır. Uygulama modern bir tasarıma sahiptir ve responsive (duyarlı) bir şekilde çalışmaktadır.
 
-First, run the development server:
+## Özellikler
+
+- Çalışan adı ve soyadı girişi
+- Proje ve madde numarası seçimi veya girişi
+- Görev açıklaması yazımı
+- Başla ve Bitir butonları ile zaman takip fonksiyonu
+- Geçen sürenin canlı olarak gösterimi
+- Görevlerin listelenmesi
+- Görevlerin Excel formatında dışa aktarımı
+- Çoklu dil desteği (İngilizce ve Türkçe)
+
+## Kullanılan Teknolojiler
+
+- **Next.js**: React tabanlı bir framework olup, sunucu tarafı rendering (SSR) ve static site generation (SSG) gibi özellikleri destekler.
+- **React**: Kullanıcı arayüzü oluşturmak için kullanılan JavaScript kütüphanesi.
+- **Tailwind CSS**: Hızlı ve duyarlı stil oluşturmak için kullanılan bir CSS frameworkü.
+- **moment.js**: Tarih ve zaman işlemleri için kullanılan bir kütüphane.
+- **xlsx**: Excel dosyalarını oluşturmak ve yönetmek için kullanılan bir kütüphane.
+- **next-i18next**: Next.js ile uluslararasılaştırma (i18n) ve yerelleştirme (l10n) sağlamak için kullanılan bir kütüphane.
+- **i18next**: Uluslararasılaştırma ve yerelleştirme için kullanılan bir JavaScript kütüphanesi.
+
+## Kurulum ve Çalıştırma
+
+Projenin yerel ortamda çalıştırılması için aşağıdaki adımları izleyin:
+
+### Gerekli Bağımlılıkların Kurulması
+
+```bash
+npm install
+```
+
+### Geliştirme Ortamında Çalıştırma
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Üretim Ortamı için Derleme
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Kullanım
 
-## Learn More
+### Başla ve Bitir Butonları
 
-To learn more about Next.js, take a look at the following resources:
+- **Başla** butonuna tıklayarak zaman takip işlemini başlatabilirsiniz.
+- **Bitir** butonuna tıklayarak zaman takip işlemini durdurabilir ve geçen süreyi kaydedebilirsiniz.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Excel'e Aktarma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Görevlerinizi tamamladıktan sonra **Excel'e Aktar** butonuna tıklayarak tüm görevlerinizi Excel dosyası olarak dışa aktarabilirsiniz.
 
-## Deploy on Vercel
+## Dil Değiştirme
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Sayfanın üst kısmında bulunan dil değiştirme butonlarını kullanarak uygulamanın dilini İngilizce veya Türkçe olarak değiştirebilirsiniz.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Ekran Görüntüleri
+
+### Mobil Görünüm
+![Mobile View](./screenshots/mobile-view.png)
+
+### Masaüstü Görünüm
+![Desktop View](./screenshots/desktop-view.png)
+
+## Katkıda Bulunma
+
+Katkıda bulunmak isterseniz, lütfen bir pull request oluşturun veya bir issue açın. Katkılarınızı bekliyoruz!
+
+## Lisans
+
+Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakınız.
