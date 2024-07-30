@@ -69,27 +69,27 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.container}>
-      <Header name={name} setName={setName} />
-      <div className="flex flex-col md:flex-row md:space-x-4 px-4 py-6">
-        <Main
-          project={project}
-          setProject={setProject}
-          itemNumber={itemNumber}
-          setItemNumber={setItemNumber}
-          taskDescription={taskDescription}
-          setTaskDescription={setTaskDescription}
-          handleStart={handleStart}
-          handleEnd={handleEnd}
-          startTime={startTime}
-          exportToExcel={exportToExcel}
-          projectList={projectList}
-          itemNumberList={itemNumberList}
-        />
-        <TaskList tasks={tasks} />
+      <div className={styles.container}>
+        <Header name={name} setName={setName} />
+        <div className="flex flex-col md:flex-row md:space-x-4 px-4 py-6">
+          <Main
+              project={project}
+              setProject={setProject}
+              itemNumber={itemNumber}
+              setItemNumber={setItemNumber}
+              taskDescription={taskDescription}
+              setTaskDescription={setTaskDescription}
+              handleStart={handleStart}
+              handleEnd={handleEnd}
+              startTime={startTime}
+              exportToExcel={exportToExcel}
+              projectList={projectList}
+              itemNumberList={itemNumberList}
+          />
+          <TaskList tasks={tasks} />
+        </div>
+        {startTime && !endTime && <Timer startTime={startTime} endTime={endTime} />}
+        <Footer />
       </div>
-      {startTime && !endTime && <Timer startTime={startTime} endTime={endTime} />}
-      <Footer />
-    </div>
   );
 }

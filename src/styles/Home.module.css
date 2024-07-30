@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f8f9fa; /* Daha açık bir arka plan rengi */
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .header {
-  background-color: #ffffff; /* Beyaz arka plan */
+  background-color: var(--header-background-color);
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .headerContent {
@@ -22,7 +23,6 @@
 
 .title {
   font-size: 2rem;
-  color: #343a40; /* Daha koyu bir metin rengi */
 }
 
 .userInfo {
@@ -31,7 +31,6 @@
 
 .dateTime {
   font-size: 1rem;
-  color: #6c757d; /* Hafif gri renk */
 }
 
 .main {
@@ -42,9 +41,9 @@
   width: 100%;
   margin: 0 auto;
   padding: 1rem;
-  background-color: #ffffff; /* Beyaz arka plan */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
-  border-radius: 8px; /* Hafif yuvarlatılmış köşeler */
+  background-color: var(--main-background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .formGroup {
@@ -55,14 +54,16 @@
 .textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   transition: border-color 0.2s;
+  background-color: var(--input-background-color);
+  color: var(--text-color);
 }
 
 .input:focus,
 .textarea:focus {
-  border-color: #80bdff;
+  border-color: var(--focus-border-color);
   outline: none;
 }
 
@@ -78,7 +79,6 @@
 
 .tasks h2 {
   font-size: 1.5rem;
-  color: #343a40; /* Daha koyu bir metin rengi */
 }
 
 .tasks ul {
@@ -89,12 +89,9 @@
 .tasks li {
   padding: 0.75rem;
   margin-bottom: 0.5rem;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
-  background-color: #ffffff; /* Beyaz arka plan */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--task-background-color);
 }
 
 .taskItem {
@@ -105,14 +102,12 @@
 
 .taskItem span {
   font-size: 1rem;
-  color: #495057; /* Daha koyu bir metin rengi */
 }
 
 .footer {
-  background-color: #ffffff; /* Beyaz arka plan */
+  background-color: var(--footer-background-color);
   padding: 1rem;
   text-align: center;
   font-size: 1rem;
-  color: #6c757d; /* Hafif gri renk */
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Hafif üst gölge efekti */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
